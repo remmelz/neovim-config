@@ -2,7 +2,6 @@
 Personal customized init.vim for [Neovim](https://neovim.io/).
 
 ````
-
 "============================================================
 " Plugins
 "============================================================
@@ -51,12 +50,22 @@ nnoremap <C-F> :VimwikiSearch<space>/\c
 nnoremap <C-N> :lnext<enter>
 
 "============================================================
+" Remove empty spaces and repace tabs
+"============================================================
+function! RemoveTabSpaces()
+    :%s/        /    /g
+    :%s/ *$//g
+    :nohlsearch
+endfunction
+
+command RemoveTabSpaces :call RemoveTabSpaces()
+
+"============================================================
 " Highlight color
 "============================================================
 highlight VimwikiHeader1 ctermfg=27
 highlight VimwikiHeader2 ctermfg=27
 highlight VimwikiPre ctermfg=68
 highlight LineNr ctermfg=grey
-
 
 ````
