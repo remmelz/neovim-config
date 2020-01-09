@@ -10,6 +10,16 @@ Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
 
 "============================================================
+" GVIM Settings
+"============================================================
+"set guifont=Lucida_Console:h10:cANSI:qDRAFT
+"set lines=55 columns=150
+"set guioptions-=T
+"set clipboard=unnamed
+"
+"colorscheme slate
+
+"============================================================
 " General
 "============================================================
 set tabstop=4        " The width of a TAB is set to 4.
@@ -47,6 +57,7 @@ let g:netrw_browse_split = 4
 "============================================================
 nnoremap <C-E> :Vexplore<enter>
 nnoremap <C-F> :VimwikiSearch<space>/\c
+nnoremap <C-T> :VimwikiSearchTag<space>
 nnoremap <C-N> :lnext<enter>
 
 "============================================================
