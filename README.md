@@ -1,9 +1,14 @@
 # neovim-init-vim
 Personal customized init.vim for [Neovim](https://neovim.io/).
 
-Make sure the Vim-plug Plugin Manager is installed.
+Set the alias vim to execute Neovim:
 ```
- curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+echo 'alias vim="nvim"' >> .bash_profile
+```
+
+Make sure the Vim-plug Plugin Manager is installed:
+```
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
