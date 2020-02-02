@@ -3,7 +3,7 @@ Personal customized init.vim for [Neovim](https://neovim.io/).
 
 Set the alias vim to execute Neovim:
 ```
-echo 'alias vim="nvim"' >> ~/.bash_profile
+echo 'alias vim="nvim"' >> ~/.bashrc
 ```
 
 Make sure the Vim-plug Plugin Manager is installed:
