@@ -1,6 +1,8 @@
 # neovim-init-vim
-Personal customized init.vim for [Neovim](https://neovim.io/).
+[Neovim](https://neovim.io/) is a fork of Vim aiming to improve user experience, 
+plugins, and GUIs. This is a personal customized init.vim
 
+## Requirements
 Set the alias vim to execute Neovim:
 
     echo 'alias vim="nvim"' >> ~/.bashrc
@@ -13,14 +15,20 @@ Make sure the Vim-plug Plugin Manager is installed:
 Create a file init.vim in ~/.config/nvim:
 
     mkdir -p ~/.config/nvim/
-    vim ~/.config/nvim/init.vim
 
+Install NodeJS for COC Codecompletion:
+
+    zypper -n in nodejs10
+
+## Configuration
 Copy the content to ~/.config/nvim/init.vim
 ````
+
 "============================================================
 " Plugins
 "============================================================
 call plug#begin()
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'dart-lang/dart-vim-plugin'
   Plug 'scrooloose/nerdtree'
 call plug#end()
@@ -47,6 +55,24 @@ set formatoptions-=t " do not automatically wrap text when typing
 set nu               " Sets linenumbers
 set list
 set mouse+=a
+
+"============================================================
+" Coc is an intellisense engine for Vim/Neovim.
+"============================================================
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 "============================================================
 " NERDtree
@@ -78,5 +104,4 @@ command RemoveTabSpaces :call RemoveTabSpaces()
 " Highlight color
 "============================================================
 highlight LineNr ctermfg=grey
-
 ````
