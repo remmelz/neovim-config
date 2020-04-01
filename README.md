@@ -105,3 +105,11 @@ command RemoveTabSpaces :call RemoveTabSpaces()
 "============================================================
 highlight LineNr ctermfg=grey
 ````
+
+## Install Plugins
+In the editor, execute PlugInstall to download and install the plugins:
+
+    :PlugInstall
+
+
+
