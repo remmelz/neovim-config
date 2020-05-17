@@ -29,6 +29,7 @@ Copy the content to ~/.config/nvim/init.vim
 call plug#begin()
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'dart-lang/dart-vim-plugin'
+  Plug 'leafgarland/typescript-vim'
   Plug 'scrooloose/nerdtree'
 call plug#end()
 
