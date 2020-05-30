@@ -195,7 +195,7 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 "============================================================
-" NERDtree
+" Custom Functions
 "============================================================
 
 function! SideExplorer()
@@ -205,20 +205,17 @@ function! SideExplorer()
   :NERDTreeToggle
 endfunction
 
-command SideExplorer :call SideExplorer()
-
-nnoremap <C-E> :SideExplorer<enter>
-
-"============================================================
-" Remove empty spaces and repace tabs
-"============================================================
-function! RemoveTabSpaces()
-    :%s/        /    /g
-    :%s/ *$//g
-    :nohlsearch
+function! SmallTerminal()
+  set splitbelow
+  :split | :terminal
+  :resize 10
 endfunction
 
-command RemoveTabSpaces :call RemoveTabSpaces()
+command SideExplorer :call SideExplorer()
+command SmallTerminal :call SmallTerminal()
+
+nnoremap <C-E> :SideExplorer<enter>
+nnoremap <C-T> :SmallTerminal<enter>
 
 "============================================================
 " Highlight color
