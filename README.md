@@ -211,6 +211,7 @@ endfunction
 command DevEnvMode :call DevEnvMode()
 
 nnoremap <C-E> :DevEnvMode<enter>
+tnoremap <Esc> <C-\><C-n>
 
 "============================================================
 " Highlight color
