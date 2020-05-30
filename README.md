@@ -198,20 +198,19 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 " Custom Functions
 "============================================================
 
-function! IDE_Mode()
+function! DevEnvMode()
+  set splitbelow
+  :split | :terminal
+  :resize 10
   :let g:NERDTreeMinimalUI = 1
   :let g:NERDTreeDirArrows = 1
   :let g:NERDTreeWinSize=40
   :NERDTreeToggle
-  
-  set splitbelow
-  :split | :terminal
-  :resize 10
 endfunction
 
-command IDE_Mode :call IDE_Mode()
+command DevEnvMode :call DevEnvMode()
 
-nnoremap <C-E> :IDE_Mode<enter>
+nnoremap <C-E> :DevEnvMode<enter>
 
 "============================================================
 " Highlight color
