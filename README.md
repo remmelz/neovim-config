@@ -198,24 +198,20 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 " Custom Functions
 "============================================================
 
-function! SideExplorer()
+function! IDE_Mode()
   :let g:NERDTreeMinimalUI = 1
   :let g:NERDTreeDirArrows = 1
   :let g:NERDTreeWinSize=40
   :NERDTreeToggle
-endfunction
-
-function! SmallTerminal()
+  
   set splitbelow
   :split | :terminal
   :resize 10
 endfunction
 
-command SideExplorer :call SideExplorer()
-command SmallTerminal :call SmallTerminal()
+command IDE_Mode :call IDE_Mode()
 
-nnoremap <C-E> :SideExplorer<enter>
-nnoremap <C-T> :SmallTerminal<enter>
+nnoremap <C-E> :IDE_Mode<enter>
 
 "============================================================
 " Highlight color
