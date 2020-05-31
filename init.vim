@@ -177,7 +177,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 function! IDE()
   set splitbelow
   :split | :terminal
-  :resize 10
+  :resize 7
   :let g:NERDTreeMinimalUI = 1
   :let g:NERDTreeDirArrows = 1
   :let g:NERDTreeWinSize=40
