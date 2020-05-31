@@ -22,9 +22,9 @@ Install NodeJS for COC Codecompletion:
 
 ## Configure
 
-  cd ~/.config
-  git clone https://github.com/remmelz/neovim-config.git
-  ln -s neovim-config nvim
+    cd ~/.config
+    git clone https://github.com/remmelz/neovim-config.git
+    ln -s neovim-config nvim
 
 
 ## Install Plugins
