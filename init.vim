@@ -28,6 +28,7 @@ set expandtab        " Expand TABs to spaces.
 set nowrap           " do not automatically wrap on load
 set formatoptions-=t " do not automatically wrap text when typing
 set nu               " Sets linenumbers
+set noequalalways    " This will cause vim to size each new split relative the current split
 set list
 set mouse+=a
 
