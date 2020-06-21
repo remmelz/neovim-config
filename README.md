@@ -1,4 +1,4 @@
-# neovim-init-vim
+# neovim-ide-config
 [Neovim](https://neovim.io/) is a fork of Vim aiming to improve user experience, 
 plugins, and GUIs. This is a personal customized init.vim
 
