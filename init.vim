@@ -3,6 +3,8 @@
 " Plugins
 "============================================================
 call plug#begin()
+  Plug 'godlygeek/tabular'
+  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'scrooloose/nerdtree'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
@@ -242,6 +244,25 @@ augroup nerdtreehidecwd
         autocmd!
         autocmd FileType nerdtree syntax match NERDTreeHideCWD #^[</].*$# conceal
 augroup end
+
+"============================================================
+" Spellchecking
+"============================================================
+
+function! SpellcheckOn()
+  :setlocal spell spelllang=en_us
+  nnoremap <silent> <C-S>  :SpellcheckOff<enter>
+endfunction
+
+function! SpellcheckOff()
+  :set nospell
+  nnoremap <silent> <C-S>  :SpellcheckOn<enter>
+endfunction
+
+command SpellcheckOn  :call SpellcheckOn()
+command SpellcheckOff :call SpellcheckOff()
+
+nnoremap <silent> <C-S>  :SpellcheckOn<enter>
 
 "============================================================
 " EOF
