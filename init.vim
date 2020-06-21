@@ -1,26 +1,26 @@
+
 "============================================================
 " Plugins
 "============================================================
 call plug#begin()
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'dart-lang/dart-vim-plugin'
-  Plug 'leafgarland/typescript-vim'
   Plug 'scrooloose/nerdtree'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 "============================================================
 " GVIM Settings
 "============================================================
-"set guifont=Lucida_Console:h10:cANSI:qDRAFT
-"set lines=55 columns=150
-"set guioptions-=T
-"set clipboard=unnamed
-"
-"colorscheme slate
+" set guifont=Lucida_Console:h10:cANSI:qDRAFT
+" set lines=55 columns=150
+" set guioptions-=T
+" set clipboard=unnamed
+" colorscheme slate
 
 "============================================================
 " General
 "============================================================
+
+" Editing
 set tabstop=2        " The width of a TAB is set to 4.
 set shiftwidth=2     " Indents will have a width of 4.
 set softtabstop=2    " Sets the number of columns for a TAB.
@@ -29,8 +29,11 @@ set nowrap           " do not automatically wrap on load
 set formatoptions-=t " do not automatically wrap text when typing
 set nu               " Sets linenumbers
 set noequalalways    " This will cause vim to size each new split relative the current split
-set list
-set mouse+=a
+set list             " Hide invisible characters
+set mouse+=a         " Add mouse support
+
+" Cosmetics
+highlight LineNr ctermfg=grey
 
 "============================================================
 " COC is an intellisense engine for Vim/Neovim.
@@ -171,28 +174,76 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 "============================================================
-" Custom Functions
+" Set Developmode (like VSCode)
 "============================================================
 
-" IDE Mode
-function! IDE()
+function! DevelopMode()
   set splitbelow
   :split | :terminal
-  :resize 7
+  :resize 8
   :let g:NERDTreeMinimalUI = 1
   :let g:NERDTreeDirArrows = 1
-  :let g:NERDTreeWinSize=40
+  :let g:NERDTreeWinSize=35
   :NERDTreeToggle
 endfunction
 
-command IDE :call IDE()
-nnoremap <C-E> :IDE<enter>
+function! NewTab()
+  :tabnew NewTab
+  :DevelopMode
+endfunction
 
-" Escape terminal
-tnoremap <Esc> <C-\><C-n> 
+function! GotoTerminal()
+  :wincmd l 
+  :wincmd j 
+  normal a
+  tnoremap ` <C-\><C-n>
+endfunction
+
+function! GotoEditor()
+  :wincmd l 
+  :wincmd k 
+  imap ` <Esc>
+endfunction
+
+function! GotoFiletree()
+  :wincmd h 
+  imap ` <Esc>
+endfunction
+
+function! ExitNeovim()
+  :qa!
+endfunction
+
+command DevelopMode  :call DevelopMode()
+command GotoTerminal :call GotoTerminal()
+command GotoFiletree :call GotoFiletree()
+command GotoEditor   :call GotoEditor()
+command ExitNeovim   :call ExitNeovim()
+command NewTab       :call NewTab()
+command ExitTerminal :call ExitTerminal()
+
+nnoremap <F1> :tabnext<enter>
+nnoremap <F5> :DevelopMode<enter>
+nnoremap <F6> :NewTab<enter>
+nnoremap <F2> :GotoFiletree<enter>
+nnoremap <F3> :GotoTerminal<enter>
+nnoremap <F4> :GotoEditor<enter>
+nnoremap <F10> :ExitNeovim<enter>
+
+nnoremap <A-n> :tabnext<enter>
+nnoremap <A-h> :GotoFiletree<enter>
+nnoremap <A-j> :GotoTerminal<enter>
+nnoremap <A-k> :GotoEditor<enter>
+
+imap ` <Esc>
+
+" Hide root path name
+augroup nerdtreehidecwd
+        autocmd!
+        autocmd FileType nerdtree syntax match NERDTreeHideCWD #^[</].*$# conceal
+augroup end
 
 "============================================================
-" Highlight color
+" EOF
 "============================================================
-highlight LineNr ctermfg=grey
 
