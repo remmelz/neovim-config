@@ -47,10 +47,11 @@ nnoremap <F3> :GotoTerminal<enter>
 nnoremap <F4> :GotoEditor<enter>
 nnoremap <F10> :ExitNeovim<enter>
 
-nnoremap <A-n> :tabnext<enter>
+nnoremap <A-n> :NewTab<enter>
 nnoremap <A-h> :GotoFiletree<enter>
 nnoremap <A-j> :GotoTerminal<enter>
 nnoremap <A-k> :GotoEditor<enter>
+nnoremap <A-l> :tabnext<enter>
 
 imap ` <Esc>
 ```
