@@ -3,6 +3,8 @@
 plugins, and GUIs. This is a personal customized init.vim. You can press
 F5 to switch to IDE mode. By using F6 it is possible to create a new tabs.
 
+<img src="./neovim_ide.png" width="350">
+
 ## Requirements
 Set the alias vim to execute Neovim:
 
