@@ -32,5 +32,24 @@ In the editor, execute PlugInstall to download and install the plugins:
 
     :PlugInstall
 
+## Shortcuts
+Overview of the keyboard shortcuts:
+
+```
+nnoremap <F1> :tabnext<enter>
+nnoremap <F5> :DevelopMode<enter>
+nnoremap <F6> :NewTab<enter>
+nnoremap <F2> :GotoFiletree<enter>
+nnoremap <F3> :GotoTerminal<enter>
+nnoremap <F4> :GotoEditor<enter>
+nnoremap <F10> :ExitNeovim<enter>
+
+nnoremap <A-n> :tabnext<enter>
+nnoremap <A-h> :GotoFiletree<enter>
+nnoremap <A-j> :GotoTerminal<enter>
+nnoremap <A-k> :GotoEditor<enter>
+
+imap ` <Esc>
+```
 
 
