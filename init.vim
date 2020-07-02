@@ -238,8 +238,6 @@ nnoremap <A-j> :GotoTerminal<enter>
 nnoremap <A-k> :GotoEditor<enter>
 nnoremap <A-l> :tabnext<enter>
 
-imap ` <Esc>
-
 " Hide root path name
 augroup nerdtreehidecwd
         autocmd!
